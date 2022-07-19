@@ -120,28 +120,8 @@ jobs:
 
       with:
 
-        name: HMCLPE-release-selfsigned.apk
+        name: *.apk
 
         path: HMCLPE/build/outputs/apk/release/HMCLPE-release.apk
 
         asset_content_type: application/apk
-
-    - name: Upload and share APK to lanzoucloud
-
-      run: python UploadLZY.py '${{ secrets.lanzou_cookie }}'
-
-    #- name: Upload APK to Pgyer
-
-    #  uses: JantHsueh/upload-file-action@master
-
-    #  with:
-
-    #    url: https://www.pgyer.com/apiv2/app/upload
-
-    #    method: POST
-
-    #    # ${{ secrets.pgyer_api_key }} 使用秘钥，如何设置下面会介绍
-
-    #    forms: '{"_api_key":"${{ secrets.pgyer_api_key }}","buildInstallType":1}'
-
-    #    fileForms: '{"file":"HMCLPE/build/outputs/apk/release/HMCLPE-release.apk"}'
